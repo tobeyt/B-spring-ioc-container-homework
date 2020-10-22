@@ -9,8 +9,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DemoSpringIocContainerApplication implements ApplicationRunner {
 
-	@Autowired
-	private GreetingService greetingService;
+	private final GreetingService greetingService;
+
+	public DemoSpringIocContainerApplication(GreetingService greetingService) {
+		this.greetingService = greetingService;
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoSpringIocContainerApplication.class, args);
